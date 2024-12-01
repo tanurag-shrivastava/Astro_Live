@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Sign In / Sign Up</title>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form id="signUpForm" onsubmit="handleSignUp(event)">
+        <h1>Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+        </div>
+        <br>
+        <span>Join AstroLive by creating your account or register with your email</span>
+        <input type="text" id="signUpName" placeholder="Name">
+        <p id="signUpNameError" class="error-message"></p>
+        <input type="email" id="signUpEmail" placeholder="Email">
+        <p id="signUpEmailError" class="error-message"></p>
+        <div style="position: relative; width: 100%;">
+          <input type="password" id="signUpPassword" placeholder="Password">
+          <button type="button" class="eye-button" onclick="togglePasswordVisibility('signUpPassword', this)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <p id="signUpPasswordError" class="error-message"></p>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form id="signInForm" onsubmit="handleSignIn(event)">
+        <h1>Access your AstroLive account</h1>
+        <!-- <div class="social-container">
+          <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+        </div> -->
+        <br>
+        <span>Join AstroLive by creating your account or continue with your profile</span>
+        <input type="email" id="signInEmail" placeholder="Email">
+        <p id="signInEmailError" class="error-message"></p>
+        <div style="position: relative; width: 100%;">
+          <input type="password" id="signInPassword" placeholder="Password">
+          <button type="button" class="eye-button" onclick="togglePasswordVisibility('signInPassword', this)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <p id="signInPasswordError" class="error-message"></p>
+        <span><a href="#">Forgot your password?</a></span>
+        <br>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome back! Dive into your AstroLive journey</h1>
+          <p>We are glad you are here! Connect with us by logging in with your personal details to explore AstroLive</p>
+          <button class="ghost" onclick="setType('signIn')">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Explore the universe with AstroLive</h1>
+          <p>AstroLive: Unveiling the mysteries of the cosmos</p>
+          <button class="ghost" onclick="setType('signUp')">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
